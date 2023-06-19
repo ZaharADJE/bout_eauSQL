@@ -7,7 +7,6 @@ DROP TABLE IF EXISTS bouteille;
 CREATE TABLE IF NOT EXISTS bouteille
 (
   id_bouteille INT NOT NULL AUTO_INCREMENT,
-  nom_bouteille VARCHAR(50) NOT NULL,
   id_matiere INT NOT NULL,
   id_quantite INT NOT NULL,
   id_couleur INT NOT NULL,
@@ -64,11 +63,15 @@ nom_eau varchar(50),
 id_provnance int NOT NULL,
 id_gout int NOT NULL,
 id_composition_chimique int NOT NULL,
+id_bouteille int NOT NULL,
 PRIMARY KEY(id_eau),
 KEY id_provnance (id_provnance),
-KEY id_gout(id_gout)
+KEY id_gout(id_gout),
+KEY id_composition_chimique (id_composition_chimique),
+kEY id_bouteille(id_bouteille)
 
 )ENGINE=InnoDB AUTO_INCREMENT=1;
+
 
 -- Structure de la table `provnance`
 
@@ -94,6 +97,16 @@ DROP TABLE IF EXISTS composition_chimique;
 CREATE TABLE IF NOT EXISTS composition_chimique(
 id_composition_chimique int NOT NULL AUTO_INCREMENT,
 nom_composition_chimique varchar(50),
+Calcium FLOAT NOT NULL,
+Magnésium FLOAT NOT NULL,
+Sodium FLOAT NOT NULL,
+Potassium FLOAT NOT NULL,
+Silice FLOAT NOT NULL,
+bicarbonates FLOAT NOT NULL,
+Sulfates FLOAT NOT NULL,
+Chlorures FLOAT NOT NULL,
+Nitrates FLOAT NOT NULL,
+Fluor FLOAT NOT NULL,
 PRIMARY KEY(id_composition_chimique)
 )ENGINE=InnoDB AUTO_INCREMENT=1;
 
